@@ -4,8 +4,8 @@
 // Tema 1 - Cadastro das cartas
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
-int main () {
-  // Área para definição das variáveis para armazenar as propriedades das cidades
+int main (){
+// Área para definição das variáveis para armazenar as propriedades das cidades
 
 char Estado1[20];
 char Estado2[20];
@@ -21,6 +21,10 @@ float Pib1;
 float Pib2;
 int PontosTuristicos1;
 int PontosTuristicos2;
+float Densidadepopulacional1;
+float Densidadepopulacional2;
+float Pibpercapita1;
+float Pibpercapita2;
 
 // Área para entrada de dados
 
@@ -48,6 +52,13 @@ scanf("%f", &Pib1);
 printf("Digite a quantidade de pontos turisticos: \n");
 scanf("%d", &PontosTuristicos1);
 
+// As contas sempre vão depois que extraímos todos os valores que precisamos. Então depois do último scanf pode entrar contas caso o código precise.
+
+// área de contas
+
+Densidadepopulacional1 = (float) Populacao1 / Area1;
+Pibpercapita1 = (float) Pib1 / Populacao1;
+
 //Carta 2
 printf("\nCarta 2\n");
 printf("Digite seu estado: \n");
@@ -71,7 +82,15 @@ scanf("%f", &Pib2);
 printf("Digite a quantidade de pontos turisticos: \n");
 scanf("%d", &PontosTuristicos2);
 
-// Área para exibição dos dados da cidade
+/*As contas sempre vão depois que extraímos todos os valores que precisamos. 
+Então depois do último scanf pode entrar contas caso o código precise.*/
+
+// área de contas
+
+Densidadepopulacional2 = (float) Populacao2 / Area2;
+Pibpercapita2 = (float) Pib2 / Populacao2;
+
+// Área para exibição dos dados
 
 //carta 1
 printf("\n Carta 1\n");
@@ -79,9 +98,11 @@ printf("Estado: %s\n", Estado1);
 printf("Código: %s\n", Codigo1);
 printf("Cidade: %s\n", Cidade1);
 printf("População: %d\n", Populacao1);
-printf("Área: %f\n", Area1);
-printf("PIB: %f\n", Pib1);
+printf("Área: %.2f\n", Area1);
+printf("PIB: %.2f\n", Pib1);
 printf("Pontos turisticos: %d\n", PontosTuristicos1);
+printf("Densidade Populacional: %f\n", Densidadepopulacional1);
+printf("PIB per Capita: %.2f\n", Pibpercapita1);
 
 //carta 2
 printf("\n Carta 2\n");
@@ -89,9 +110,12 @@ printf("Estado: %s\n", Estado2);
 printf("Código: %s\n", Codigo2);
 printf("Cidade: %s\n", Cidade2);
 printf("População: %d\n", Populacao2);
-printf("Área: %f\n", Area2);
-printf("PIB: %f\n", Pib2);
+printf("Área: %.2f\n", Area2);
+printf("PIB: %.2f\n", Pib2);
 printf("Pontos turisticos: %d\n", PontosTuristicos2);
+printf("Densidade Populacional: %f\n", Densidadepopulacional2);
+printf("PIB per Capita: %.2f\n", Pibpercapita2);
+
 
   /*
     printf("%formato1 %formato2 %formato3", variavel1, variavel 2, variavel 3)
@@ -106,6 +130,4 @@ printf("Pontos turisticos: %d\n", PontosTuristicos2);
     .+(numero de casa decimal)f = .2f
 
     */
-
-    return 0;
 }
